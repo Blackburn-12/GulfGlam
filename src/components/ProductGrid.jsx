@@ -10,10 +10,13 @@ const ProductGrid = () => {
         {products.map((product) => (
           <ProductCard
             key={product.id}
-            images={product.images}
             rating={product.rating}
             title={product.title}
             price={product.price}
+            brand={product.brand}
+            size={product.size}
+            image={product.image}
+            link={product.link}
           />
         ))}
       </div>

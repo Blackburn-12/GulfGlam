@@ -3,6 +3,7 @@ import React from "react";
 const Hero = () => {
   return (
     <section
+      id="home"
       className="relative font-Montserrat w-full h-screen bg-cover bg-center flex items-center px-6"
       style={{ backgroundImage: "url('/images/bgimg.png')" }}
     >

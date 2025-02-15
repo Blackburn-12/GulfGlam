@@ -39,20 +39,47 @@ const Navbar = () => {
       {/* Navigation Links */}
       <ul className="hidden lg:flex space-x-5 text-lg font-medium">
         <li>
-          <a href="#home" className="hover:text-[#90664e]">
+          <a
+            href="#home"
+            className="hover:text-[#90664e]"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen(false);
+
+              const targetSection = document.getElementById("home");
+              if (targetSection) {
+                window.scrollTo({
+                  top: targetSection.offsetTop - 80, // Adjust offset to match navbar height
+                  behavior: "smooth",
+                });
+              }
+            }}
+          >
             Home
           </a>
         </li>
+
         <li>
-          <a href="#about" className="hover:text-[#90664e]">
-            About Us
-          </a>
-        </li>
-        <li>
-          <a href="#products" className="hover:text-[#90664e]">
+          <a
+            href="#new-products"
+            className="hover:text-[#90664e]"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen(false);
+
+              const targetSection = document.getElementById("new-products");
+              if (targetSection) {
+                window.scrollTo({
+                  top: targetSection.offsetTop - 80, // Adjust offset to match navbar height
+                  behavior: "smooth",
+                });
+              }
+            }}
+          >
             Our Products
           </a>
         </li>
+
         <li>
           <a href="#amazon" target="_blank" className="hover:text-[#90664e]">
             Amazon
@@ -65,6 +92,27 @@ const Navbar = () => {
             className="hover:text-[#90664e]"
           >
             Noon
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#contact"
+            className="hover:text-[#90664e]"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen(false);
+
+              const targetSection = document.getElementById("contact");
+              if (targetSection) {
+                window.scrollTo({
+                  top: targetSection.offsetTop - 80, // Adjust offset to match navbar height
+                  behavior: "smooth",
+                });
+              }
+            }}
+          >
+            Contact Us
           </a>
         </li>
       </ul>
@@ -96,17 +144,43 @@ const Navbar = () => {
         </button>
         <ul className="text-xl space-y-6 text-center">
           <li>
-            <a href="#home" onClick={() => setIsOpen(false)}>
+            <a
+              href="#home"
+              className="hover:text-[#90664e]"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+
+                const targetSection = document.getElementById("home");
+                if (targetSection) {
+                  window.scrollTo({
+                    top: targetSection.offsetTop - 80, // Adjust offset to match navbar height
+                    behavior: "smooth",
+                  });
+                }
+              }}
+            >
               Home
             </a>
           </li>
+
           <li>
-            <a href="#about" onClick={() => setIsOpen(false)}>
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="#products" onClick={() => setIsOpen(false)}>
+            <a
+              href="#new-products"
+              className="hover:text-[#90664e]"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+
+                const targetSection = document.getElementById("new-products");
+                if (targetSection) {
+                  window.scrollTo({
+                    top: targetSection.offsetTop - 80, // Adjust offset to match navbar height
+                    behavior: "smooth",
+                  });
+                }
+              }}
+            >
               Our Products
             </a>
           </li>
@@ -116,8 +190,32 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#noon" onClick={() => setIsOpen(false)}>
+            <a
+              href="https://www.noon.com/uae-en/p-214570/?utm_source=C1000207L&utm_medium=referral"
+              target="_blank"
+              className="hover:text-[#90664e]"
+            >
               Noon
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              className="hover:text-[#90664e]"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+
+                const targetSection = document.getElementById("contact");
+                if (targetSection) {
+                  window.scrollTo({
+                    top: targetSection.offsetTop - 80, // Adjust offset to match navbar height
+                    behavior: "smooth",
+                  });
+                }
+              }}
+            >
+              Contact Us
             </a>
           </li>
         </ul>

@@ -3,7 +3,10 @@ import ProductGrid from "./ProductGrid";
 
 const NewProducts = () => {
   return (
-    <section className="min-h-screen bg-white font-Montserrat">
+    <section
+      id="new-products"
+      className="min-h-screen bg-white font-Montserrat"
+    >
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-2">
           <h3 className="text-lg md:text-xl text-black tracking-[0.3em] font-normal mb-2">
