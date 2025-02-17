@@ -120,7 +120,7 @@ const Navbar = () => {
       {/* Phone Icon with Number */}
       <div className="hidden lg:flex items-center space-x-2">
         <FiPhone size={24} />
-        <span className="text-lg font-medium">+123 456 7890</span>
+        <span className="text-lg font-medium">+971 54 4872060</span>
       </div>
 
       {/* Mobile Menu Button */}

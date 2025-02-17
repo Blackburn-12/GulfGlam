@@ -4,6 +4,8 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import NewProducts from "./components/NewProducts";
 import Testimonials from "./components/Testimonials";
+import WhatsAppButton from "./components/WhatsApp"; // Import WhatsApp button
+
 function App() {
   return (
     <>
@@ -13,6 +15,7 @@ function App() {
       <Testimonials />
       <ContactPage />
       <Footer />
+      <WhatsAppButton /> {/* Add WhatsApp button here */}
     </>
   );
 }

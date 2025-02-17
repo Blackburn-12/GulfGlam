@@ -17,7 +17,9 @@ const ContactPage = () => {
   });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
-
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
   // Handle Input Change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -35,12 +37,7 @@ const ContactPage = () => {
     };
 
     try {
-      await emailjs.send(
-        "service_un1mrap",
-        "template_knem4at",
-        emailData,
-        "uMjJD7qchV5Q8wIdR"
-      );
+      await emailjs.send(serviceId, templateId, emailData, publicKey);
       setSuccess(true);
       setFormData({ name: "", phone: "", email: "", message: "" });
       setTimeout(() => setSuccess(false), 3000);
