@@ -81,8 +81,12 @@ const Navbar = () => {
         </li>
 
         <li>
-          <a href="#amazon" target="_blank" className="hover:text-[#90664e]">
-            Amazon
+          <a
+            href="https://www.trendyol.com/en/store/gulf-glam-m-1146223?sst=0"
+            target="_blank"
+            className="hover:text-[#90664e]"
+          >
+            Trendyol
           </a>
         </li>
         <li>
@@ -120,7 +124,7 @@ const Navbar = () => {
       {/* Phone Icon with Number */}
       <div className="hidden lg:flex items-center space-x-2">
         <FiPhone size={24} />
-        <span className="text-lg font-medium">+971 54 4872060</span>
+        <span className="text-lg font-medium">+971 50 705 5487</span>
       </div>
 
       {/* Mobile Menu Button */}
@@ -185,8 +189,13 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#amazon" onClick={() => setIsOpen(false)}>
-              Amazon
+            <a
+              href="https://www.trendyol.com/en/store/gulf-glam-m-1146223?sst=0"
+              target="_blank"
+              className="hover:text-[#90664e]"
+              onClick={() => setIsOpen(false)}
+            >
+              Trendyol
             </a>
           </li>
           <li>

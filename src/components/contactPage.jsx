@@ -30,14 +30,24 @@ const ContactPage = () => {
     e.preventDefault();
 
     const emailData = {
-      from_name: formData.name,
-      reply_to: formData.email,
+      name: formData.name,
+      phone: formData.phone,
       message: formData.message,
-      to_name: "Gulf Glam",
+      to_email: formData.email, // user’s email
+      reply_to: formData.email, // user’s email for reply-to
     };
 
+    console.log("Payload sent to EmailJS:", emailData); // 👈 log full payload
+
     try {
-      await emailjs.send(serviceId, templateId, emailData, publicKey);
+      const res = await emailjs.send(
+        serviceId,
+        templateId,
+        emailData,
+        publicKey
+      );
+      console.log("EmailJS Response:", res); // 👈 log response too
+
       setSuccess(true);
       setFormData({ name: "", phone: "", email: "", message: "" });
       setTimeout(() => setSuccess(false), 3000);
@@ -65,7 +75,7 @@ const ContactPage = () => {
             <h2 className="text-4xl font-bold text-[#CA9576] mb-2 text-center">
               Get in Touch
             </h2>
-            <p className="text-gray-600 text-center mb-8 text-lg">
+            <p className="text-xs md:text-xs text-gray-600 text-center mb-8">
               We'd love to hear from you. Send us a message below!
             </p>
 

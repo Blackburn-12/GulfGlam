@@ -41,10 +41,10 @@ const Testimonials = () => {
     <section className="bg-white font-Montserrat py-12">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-8">
-          <h3 className="text-lg md:text-xl text-black tracking-[0.3em] font-normal mb-2">
+          <h3 className="text-xs md:text-xs text-black tracking-[0.3em] font-normal mb-2">
             HEAR FROM OUR HAPPY CUSTOMERS
           </h3>
-          <h2 className="uppercase text-[#CA9576] text-2xl md:text-3xl font-bold">
+          <h2 className="uppercase text-[#CA9576] text-2xl md:text-xl font-bold">
             TESTIMONIALS
           </h2>
         </div>

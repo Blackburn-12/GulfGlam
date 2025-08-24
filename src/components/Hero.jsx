@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hero = () => {
+const Hero = ({ onLearnMore }) => {
   return (
     <section
       id="home"
@@ -13,7 +13,10 @@ const Hero = () => {
           Be <span className="font-extrabold">Beautiful</span> <br />
           Be <span className="font-extrabold">You</span>
         </h1>
-        <button className="mt-6 px-6 py-3 bg-[#C48D6E] text-white font-semibold text-lg  hover:opacity-80 transition-all">
+        <button
+          onClick={onLearnMore}
+          className="mt-6 px-6 py-3 bg-[#C48D6E] text-white font-semibold text-lg hover:opacity-80 transition-all"
+        >
           LEARN MORE
         </button>
       </div>

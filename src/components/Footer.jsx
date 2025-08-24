@@ -19,36 +19,6 @@ const Footer = () => {
           Quality products and services you can trust.
         </p>
 
-        <div className="flex justify-center gap-4 mb-6">
-          <a href="#" className="text-black text-xl hover:text-[#90664e]">
-            <FaFacebookF />
-          </a>
-          <a href="#" className="text-black text-xl hover:text-[#90664e]">
-            <FaTwitter />
-          </a>
-          <a href="#" className="text-black text-xl hover:text-[#90664e]">
-            <FaInstagram />
-          </a>
-          <a href="#" className="text-black text-xl hover:text-[#90664e]">
-            <FaLinkedinIn />
-          </a>
-        </div>
-
-        <div className="flex justify-center gap-6 text-gray-700 text-sm">
-          <a href="#" className="hover:text-[#90664e]">
-            About Us
-          </a>
-          <a href="#" className="hover:text-[#90664e]">
-            Services
-          </a>
-          <a href="#" className="hover:text-[#90664e]">
-            Contact
-          </a>
-          <a href="#" className="hover:text-[#90664e]">
-            Privacy Policy
-          </a>
-        </div>
-
         <p className="text-gray-600 text-xs mt-6">
           &copy; {new Date().getFullYear()} Gulf Glam. All rights reserved.
         </p>

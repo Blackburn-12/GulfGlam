@@ -6,9 +6,9 @@ const ProductCard = ({ image, rating, title, price, brand, size, link }) => {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="block w-[300px] bg-white rounded-lg overflow-hidden  transition cursor-pointer"
+      className="block w-[200px] bg-white rounded-lg overflow-hidden  transition cursor-pointer"
     >
-      <div className="h-[200px] flex justify-center items-center ">
+      <div className="h-[150px] flex justify-center items-center ">
         <img
           src={image}
           alt={title}
