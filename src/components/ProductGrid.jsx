@@ -1,13 +1,34 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
-import { products } from "./ProductData";
+import apiService from "../services/api";
 
 const ProductGrid = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const itemsPerPage = 8;
   const gridRef = useRef(null);
+
+  // Fetch products from API
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        const data = await apiService.getProducts();
+        setProducts(data);
+      } catch (err) {
+        setError("Failed to load products");
+        console.error("Error fetching products:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   // 🔍 Filter products
   const filteredProducts = products.filter(
@@ -56,7 +77,13 @@ const ProductGrid = () => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 overflow-y-auto"
         style={{ maxHeight: "800px", paddingRight: "2px" }}
       >
-        {currentProducts.length > 0 ? (
+        {loading ? (
+          <div className="col-span-full flex justify-center items-center py-8">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#CA9576]"></div>
+          </div>
+        ) : error ? (
+          <p className="text-center text-red-500 col-span-full">{error}</p>
+        ) : currentProducts.length > 0 ? (
           currentProducts.map((product) => (
             <ProductCard key={product.id} {...product} />
           ))

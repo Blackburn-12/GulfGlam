@@ -1,4 +1,7 @@
 import { useState, useRef, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store";
 import ContactPage from "./components/contactPage";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -8,7 +11,15 @@ import Testimonials from "./components/Testimonials";
 import WhatsAppButton from "./components/WhatsApp";
 import LearnMore from "./components/LearnMore";
 
-function App() {
+// Admin Components
+import AdminLogin from "./components/admin/AdminLogin";
+import AdminSignup from "./components/admin/AdminSignup";
+import AdminDashboard from "./components/admin/AdminDashboard";
+import ProductManagement from "./components/admin/ProductManagement";
+import ProtectedRoute from "./components/admin/ProtectedRoute";
+
+// Main App Component
+function MainApp() {
   const [showLearnMore, setShowLearnMore] = useState(false);
 
   const learnMoreRef = useRef(null);
@@ -54,6 +65,40 @@ function App() {
       <Footer />
       <WhatsAppButton />
     </>
+  );
+}
+
+// App Component with Routing
+function App() {
+  return (
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/" element={<MainApp />} />
+
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          {/* <Route path="/admin/signup" element={<AdminSignup />} /> */}
+          <Route
+            path="/admin/dashboard"
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/products"
+            element={
+              <ProtectedRoute>
+                <ProductManagement />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </Router>
+    </Provider>
   );
 }
 
